@@ -50,6 +50,8 @@
 		1590B3AF289AD49D00C87D69 /* a.out */ = {isa = PBXFileReference; lastKnownFileType = file; path = a.out; sourceTree = "<group>"; };
 		1590B3B0289AD49D00C87D69 /* test.hex */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.hex; sourceTree = "<group>"; };
 		1590B3B1289AD49D00C87D69 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		15B6E098289D7494007DEEBF /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		15B6E09B289D74E0007DEEBF /* progress.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = progress.md; sourceTree = "<group>"; };
 		15E76C32289C5D4300AE4D99 /* Executable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Executable.cpp; sourceTree = "<group>"; };
 		15E76C33289C5D4300AE4D99 /* Executable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Executable.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,8 @@
 		1590B356289ACF8D00C87D69 = {
 			isa = PBXGroup;
 			children = (
+				15B6E09C289D74E8007DEEBF /* doc */,
+				15B6E098289D7494007DEEBF /* readme.md */,
 				1590B38E289AD1FF00C87D69 /* CMakeLists.txt */,
 				1590B380289AD1FF00C87D69 /* inc */,
 				1590B388289AD1FF00C87D69 /* src */,
@@ -127,6 +131,14 @@
 			);
 			name = test;
 			path = AVRSim/test;
+			sourceTree = "<group>";
+		};
+		15B6E09C289D74E8007DEEBF /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				15B6E09B289D74E0007DEEBF /* progress.md */,
+			);
+			name = doc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
