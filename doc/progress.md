@@ -7,15 +7,27 @@ The distinction appears due to how the fetch-decode-execute cycle is implemented
 ## Progress table
 
 :x: =                      Not implemented
-:interrobang: =            Partial implementation available
-:heavy_exclamation_mark: = Implemented, but untested / partially tested
+
+:construction: =            Partial implementation available
+
+:warning: = Implemented, but untested / partially tested
+
 :white_check_mark: =       Fully implemented
 
-|   OPCODE    |   DECODABLE            |  EXECUTABLE  |
-| :--------:  | :-----------:          |:------------:|
-| 00xx, NOP   |:heavy_exclamation_mark:|:x:           |
-| 01xx, MOVW  |:heavy_exclamation_mark:|:x:           |
-| 02xx, MULS  |:heavy_exclamation_mark:|:x:           |
-| 03xx, MULSU |:heavy_exclamation_mark:|:x:           |
+
+|   OPCODE     |        DECODABLE       |  EXECUTABLE  |
+|:------------:|:----------------------:|:------------:|
+| 00xx, NOP    |        :warning:       |      :x:     |
+| 01xx, MOVW   |        :warning:       |      :x:     |
+| 02xx, MULS   |        :warning:       |      :x:     |
+| 03xx, MULSU  |        :warning:       |      :x:     |
+| 03xx, FMUL   |        :warning:       |      :x:     |
+| 03xx, FMULS  |        :warning:       |      :x:     |
+| 03xx, FMULSU |        :warning:       |      :x:     |
+| 04xx, CPC    |        :warning:       |      :x:     |
+| 05xx, CPC    |        :warning:       |      :x:     |
+| 06xx, CPC    |        :warning:       |      :x:     |
+| 07xx, CPC    |        :warning:       |      :x:     |
+| 08xx, SBC    |        :warning:       |      :x:     |
 
 
