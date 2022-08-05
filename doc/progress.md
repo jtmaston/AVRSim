@@ -16,7 +16,7 @@ The distinction appears due to how the fetch-decode-execute cycle is implemented
 
 
 |   OPCODE     |        DECODABLE       |  EXECUTABLE  |
-|:------------:|:----------------------:|:------------:|
+|:------------ |:----------------------:|:------------:|
 | 00xx, NOP    |        :warning:       |      :x:     |
 | 01xx, MOVW   |        :warning:       |      :x:     |
 | 02xx, MULS   |        :warning:       |      :x:     |
