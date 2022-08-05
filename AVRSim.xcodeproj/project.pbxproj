@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1590B363289ACF8D00C87D69 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1590B362289ACF8D00C87D69 /* main.cpp */; };
+		1590B390289AD1FF00C87D69 /* processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1590B38A289AD1FF00C87D69 /* processor.cpp */; };
+		1590B391289AD1FF00C87D69 /* fetcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1590B38B289AD1FF00C87D69 /* fetcher.cpp */; };
+		1590B392289AD1FF00C87D69 /* decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1590B38C289AD1FF00C87D69 /* decoder.cpp */; };
+		1590B393289AD1FF00C87D69 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1590B38D289AD1FF00C87D69 /* main.cpp */; };
+		15E76C34289C5D4300AE4D99 /* Executable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15E76C32289C5D4300AE4D99 /* Executable.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,30 @@
 
 /* Begin PBXFileReference section */
 		1590B35F289ACF8D00C87D69 /* AVRSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRSim; sourceTree = BUILT_PRODUCTS_DIR; };
-		1590B362289ACF8D00C87D69 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1590B381289AD1FF00C87D69 /* avr copy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "avr copy.hpp"; sourceTree = "<group>"; };
+		1590B382289AD1FF00C87D69 /* fetcher.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fetcher.hpp; sourceTree = "<group>"; };
+		1590B383289AD1FF00C87D69 /* avr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = avr.hpp; sourceTree = "<group>"; };
+		1590B384289AD1FF00C87D69 /* decoder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = decoder.hpp; sourceTree = "<group>"; };
+		1590B386289AD1FF00C87D69 /* processor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = processor.hpp; sourceTree = "<group>"; };
+		1590B387289AD1FF00C87D69 /* registers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = registers.hpp; sourceTree = "<group>"; };
+		1590B38A289AD1FF00C87D69 /* processor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = processor.cpp; sourceTree = "<group>"; };
+		1590B38B289AD1FF00C87D69 /* fetcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fetcher.cpp; sourceTree = "<group>"; };
+		1590B38C289AD1FF00C87D69 /* decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = decoder.cpp; sourceTree = "<group>"; };
+		1590B38D289AD1FF00C87D69 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1590B38E289AD1FF00C87D69 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		1590B3A7289AD49D00C87D69 /* test.lst */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.lst; sourceTree = "<group>"; };
+		1590B3A8289AD49D00C87D69 /* dis.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = dis.s; sourceTree = "<group>"; };
+		1590B3A9289AD49D00C87D69 /* interlaced.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = interlaced.s; sourceTree = "<group>"; };
+		1590B3AA289AD49D00C87D69 /* test */ = {isa = PBXFileReference; lastKnownFileType = file; path = test; sourceTree = "<group>"; };
+		1590B3AB289AD49D00C87D69 /* objdump.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = objdump.s; sourceTree = "<group>"; };
+		1590B3AC289AD49D00C87D69 /* test.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = test.s; sourceTree = "<group>"; };
+		1590B3AD289AD49D00C87D69 /* test.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = test.o; sourceTree = "<group>"; };
+		1590B3AE289AD49D00C87D69 /* test copy.hex */ = {isa = PBXFileReference; lastKnownFileType = text; path = "test copy.hex"; sourceTree = "<group>"; };
+		1590B3AF289AD49D00C87D69 /* a.out */ = {isa = PBXFileReference; lastKnownFileType = file; path = a.out; sourceTree = "<group>"; };
+		1590B3B0289AD49D00C87D69 /* test.hex */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.hex; sourceTree = "<group>"; };
+		1590B3B1289AD49D00C87D69 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		15E76C32289C5D4300AE4D99 /* Executable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Executable.cpp; sourceTree = "<group>"; };
+		15E76C33289C5D4300AE4D99 /* Executable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Executable.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +68,7 @@
 		1590B356289ACF8D00C87D69 = {
 			isa = PBXGroup;
 			children = (
+				1590B3A6289AD49D00C87D69 /* test */,
 				1590B361289ACF8D00C87D69 /* AVRSim */,
 				1590B360289ACF8D00C87D69 /* Products */,
 			);
@@ -57,9 +85,56 @@
 		1590B361289ACF8D00C87D69 /* AVRSim */ = {
 			isa = PBXGroup;
 			children = (
-				1590B362289ACF8D00C87D69 /* main.cpp */,
+				1590B38E289AD1FF00C87D69 /* CMakeLists.txt */,
+				1590B380289AD1FF00C87D69 /* inc */,
+				1590B388289AD1FF00C87D69 /* src */,
 			);
 			path = AVRSim;
+			sourceTree = "<group>";
+		};
+		1590B380289AD1FF00C87D69 /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				1590B381289AD1FF00C87D69 /* avr copy.hpp */,
+				1590B382289AD1FF00C87D69 /* fetcher.hpp */,
+				1590B383289AD1FF00C87D69 /* avr.hpp */,
+				1590B384289AD1FF00C87D69 /* decoder.hpp */,
+				1590B386289AD1FF00C87D69 /* processor.hpp */,
+				1590B387289AD1FF00C87D69 /* registers.hpp */,
+				15E76C33289C5D4300AE4D99 /* Executable.hpp */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		1590B388289AD1FF00C87D69 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				15E76C32289C5D4300AE4D99 /* Executable.cpp */,
+				1590B38A289AD1FF00C87D69 /* processor.cpp */,
+				1590B38B289AD1FF00C87D69 /* fetcher.cpp */,
+				1590B38C289AD1FF00C87D69 /* decoder.cpp */,
+				1590B38D289AD1FF00C87D69 /* main.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		1590B3A6289AD49D00C87D69 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				1590B3A7289AD49D00C87D69 /* test.lst */,
+				1590B3A8289AD49D00C87D69 /* dis.s */,
+				1590B3A9289AD49D00C87D69 /* interlaced.s */,
+				1590B3AA289AD49D00C87D69 /* test */,
+				1590B3AB289AD49D00C87D69 /* objdump.s */,
+				1590B3AC289AD49D00C87D69 /* test.s */,
+				1590B3AD289AD49D00C87D69 /* test.o */,
+				1590B3AE289AD49D00C87D69 /* test copy.hex */,
+				1590B3AF289AD49D00C87D69 /* a.out */,
+				1590B3B0289AD49D00C87D69 /* test.hex */,
+				1590B3B1289AD49D00C87D69 /* main.cpp */,
+			);
+			name = test;
+			path = AVRSim/test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1590B363289ACF8D00C87D69 /* main.cpp in Sources */,
+				1590B390289AD1FF00C87D69 /* processor.cpp in Sources */,
+				1590B391289AD1FF00C87D69 /* fetcher.cpp in Sources */,
+				1590B392289AD1FF00C87D69 /* decoder.cpp in Sources */,
+				1590B393289AD1FF00C87D69 /* main.cpp in Sources */,
+				15E76C34289C5D4300AE4D99 /* Executable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +211,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -162,7 +241,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -190,7 +269,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -220,7 +299,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
