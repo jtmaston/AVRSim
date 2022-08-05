@@ -9,12 +9,13 @@ AVRSim is my latest trip into the low level area, by trying to recreate a comple
 
 # Road-map
 * Initial work:
-    - [] Implement the general architecture, in its simplest form, for which I have set the goal to have load, store, arithmetic and logic operations and a semi-functioning stack.
-    - [] Implement more complex functions of the processor, such as port registers and I/O
-    - [] Implement DMA ( direct memory access )
-    - [] Implement interrupt support
-    - [] Implement interfaces ( UART, SPI, I2C )
-    - [] Implement timers
+    - [ ] Write a better readme, with proper project description
+    - [ ] Implement the general architecture, in its simplest form, for which I have set the goal to have load, store, arithmetic and logic operations and a semi-functioning stack.
+    - [ ] Implement more complex functions of the processor, such as port registers and I/O
+    - [ ] Implement DMA ( direct memory access )
+    - [ ] Implement interrupt support
+    - [ ] Implement interfaces ( UART, SPI, I2C )
+    - [ ] Implement timers
 * Optimizations:
     * ???
 
