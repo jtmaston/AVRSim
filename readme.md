@@ -21,3 +21,6 @@ AVRSim is my latest trip into the low level area, by trying to recreate a comple
 
 * GUI
     * Implement a GUI.
+
+# Links and references
+[Progress report](https://github.com/jtmaston/AVRSim/blob/main/doc/progress.md)
