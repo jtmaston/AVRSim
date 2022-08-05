@@ -68,8 +68,10 @@
 		1590B356289ACF8D00C87D69 = {
 			isa = PBXGroup;
 			children = (
+				1590B38E289AD1FF00C87D69 /* CMakeLists.txt */,
+				1590B380289AD1FF00C87D69 /* inc */,
+				1590B388289AD1FF00C87D69 /* src */,
 				1590B3A6289AD49D00C87D69 /* test */,
-				1590B361289ACF8D00C87D69 /* AVRSim */,
 				1590B360289ACF8D00C87D69 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,16 +82,6 @@
 				1590B35F289ACF8D00C87D69 /* AVRSim */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		1590B361289ACF8D00C87D69 /* AVRSim */ = {
-			isa = PBXGroup;
-			children = (
-				1590B38E289AD1FF00C87D69 /* CMakeLists.txt */,
-				1590B380289AD1FF00C87D69 /* inc */,
-				1590B388289AD1FF00C87D69 /* src */,
-			);
-			path = AVRSim;
 			sourceTree = "<group>";
 		};
 		1590B380289AD1FF00C87D69 /* inc */ = {
