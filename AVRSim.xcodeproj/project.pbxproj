@@ -51,7 +51,7 @@
 		1590B3B0289AD49D00C87D69 /* test.hex */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.hex; sourceTree = "<group>"; };
 		1590B3B1289AD49D00C87D69 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		15B6E098289D7494007DEEBF /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
-		15B6E09B289D74E0007DEEBF /* progress.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = progress.md; sourceTree = "<group>"; };
+		15B6E09D289D781C007DEEBF /* progress.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = progress.md; path = doc/progress.md; sourceTree = "<group>"; };
 		15E76C32289C5D4300AE4D99 /* Executable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Executable.cpp; sourceTree = "<group>"; };
 		15E76C33289C5D4300AE4D99 /* Executable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Executable.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 		15B6E09C289D74E8007DEEBF /* doc */ = {
 			isa = PBXGroup;
 			children = (
-				15B6E09B289D74E0007DEEBF /* progress.md */,
+				15B6E09D289D781C007DEEBF /* progress.md */,
 			);
 			name = doc;
 			sourceTree = "<group>";
