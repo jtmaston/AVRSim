@@ -39,10 +39,10 @@ Note 2: If it seems that opcodes are implemented at random, that's because they 
 | 09xx, SBC    |     :construction:     |      :x:     |
 | 0Axx, SBC    |          :x:           |      :x:     |
 | 0Bxx, SBC    |          :x:           |      :x:     |
-| 0Cxx, ADD    |        :warning:       |      :x:     |
-| 0Dxx, ADD    |        :warning:       |      :x:     |
-| 0Exx, ADD    |        :warning:       |      :x:     |
-| 0Fxx, ADD    |        :warning:       |      :x:     |
+| 0Cxx, ADD    |        :warning:       |   :warning:  |
+| 0Dxx, ADD    |        :warning:       |   :warning:  |
+| 0Exx, ADD    |        :warning:       |   :warning:  |
+| 0Fxx, ADD    |        :warning:       |   :warning:  |
 | 10xx, CPSE   |          :x:           |      :x:     |
 | 11xx, CPSE   |          :x:           |      :x:     |
 | 12xx, CPSE   |          :x:           |      :x:     |
@@ -71,50 +71,50 @@ Note 2: If it seems that opcodes are implemented at random, that's because they 
 | 29xx, OR     |          :x:           |      :x:     |
 | 2Axx, OR     |          :x:           |      :x:     |
 | 2Bxx, OR     |          :x:           |      :x:     |
-| 2Cxx, MOV    |          :x:           |      :x:     |
-| 2Dxx, MOV    |          :x:           |      :x:     |
-| 2Exx, MOV    |          :x:           |      :x:     |
-| 2Fxx, MOV            |          :x:           |      :x:     |
+| 2Cxx, MOV    |          :x:           |   :warning:  |
+| 2Dxx, MOV    |          :x:           |   :warning:  |
+| 2Exx, MOV    |          :x:           |   :warning:  |
+| 2Fxx, MOV            |          :x:           |   :warning:  |
 | 30xx -> 3Fxx, CPI    |          :x:           |      :x:     |
 | 40xx -> 4Fxx, SBCI   |          :x:           |      :x:     |
 | 50xx -> 5Fxx, SBCI   |          :x:           |      :x:     |
 | 60xx -> 6Fxx, ORI    |          :x:           |      :x:     |
 | 70xx -> 7Fxx, ANDI   |          :x:           |      :x:     |
 | 80xx, LD    |          :x:           |      :x:     |
-| 80xx, LDD   |          :x:           |      :x:     |
+| 80xx, LDD   |          :x:           |   :warning:  |
 | 81xx, LD    |        :warning:       |      :x:     |
-| 81xx, LDD   |        :warning:       |      :x:     |
+| 81xx, LDD   |        :warning:       |   :warning:  |
 | 82xx, ST    |          :x:           |      :x:     |
-| 82xx, STD   |          :x:           |      :x:     |
+| 82xx, STD   |          :x:           |   :warning:  |
 | 83xx, ST    |          :x:           |      :x:     |
-| 83xx, STD   |          :x:           |      :x:     |
-| 84xx, LDD   |          :x:           |      :x:     |
-| 85xx, LDD   |          :x:           |      :x:     |
-| 86xx, STD   |          :x:           |      :x:     |
-| 87xx, STD   |          :x:           |      :x:     |
-| 88xx, LDD   |          :x:           |      :x:     |
-| 89xx, LDD   |          :x:           |      :x:     |
-| 8Axx, STD   |          :x:           |      :x:     |
-| 8Bxx, STD   |          :x:           |      :x:     |
-| 8Cxx, LDD   |          :x:           |      :x:     |
-| 8Dxx, LDD   |          :x:           |      :x:     |
-| 8Exx, STD   |          :x:           |      :x:     |
-| 8Fxx, STD   |          :x:           |      :x:     |
+| 83xx, STD   |          :x:           |   :warning:  |
+| 84xx, LDD   |          :x:           |   :warning:  |
+| 85xx, LDD   |          :x:           |   :warning:  |
+| 86xx, STD   |          :x:           |   :warning:  |
+| 87xx, STD   |          :x:           |   :warning:  |
+| 88xx, LDD   |          :x:           |   :warning:  |
+| 89xx, LDD   |          :x:           |   :warning:  |
+| 8Axx, STD   |          :x:           |   :warning:  |
+| 8Bxx, STD   |          :x:           |   :warning:  |
+| 8Cxx, LDD   |          :x:           |   :warning:  |
+| 8Dxx, LDD   |          :x:           |   :warning:  |
+| 8Exx, STD   |          :x:           |   :warning:  |
+| 8Fxx, STD   |          :x:           |   :warning:  |
 | 90xx, LDS   |          :x:           |      :x:     |         
 | 90xx, LD    |          :x:           |      :x:     |
-| 90xx, POP   |          :x:           |      :x:     |
+| 90xx, POP   |          :x:           |      :warning:     |
 | 90xx, LDS   |          :x:           |      :x:     |
 | 90xx, LD    |          :x:           |      :x:     |
-| 90xx, POP   |          :x:           |      :x:     |
+| 90xx, POP   |          :x:           |      :warning:     |
 | 91xx, LDS   |          :x:           |      :x:     |
 | 91xx, LD    |          :x:           |      :x:     |
-| 91xx, POP   |        :warning:       |      :x:     |
+| 91xx, POP   |        :warning:       |   :warning:  |
 | 92xx, STS   |          :x:           |      :x:     |
 | 92xx, ST    |          :x:           |      :x:     |
-| 92xx, PUSH  |          :x:           |      :x:     |
+| 92xx, PUSH  |        :warning:       |   :warning:  |
 | 93xx, STS   |          :x:           |      :x:     |
 | 93xx, ST    |          :x:           |      :x:     |
-| 93xx, PUSH  |          :x:           |      :x:     |
+| 93xx, PUSH  |          :x:           |   :warning:  |
 | 94xx, MANY  |          :x:           |      :x:     |
 | 95xx, MANY  |     :construction:     |      :x:     |
 | 96xx, ADIW  |        :warning:       |      :x:     |
@@ -124,19 +124,19 @@ Note 2: If it seems that opcodes are implemented at random, that's because they 
 | 9Axx, SBI   |          :x:           |      :x:     |
 | 9Bxx, SBIS  |          :x:           |      :x:     |
 | 9Cxx -> 9Fxx, MUL  |          :x:           |      :x:     |
-| A0xx -> A1xx, LDD  |          :x:           |      :x:     |
+| A0xx -> A1xx, LDD  |          :x:           |   :warning:  |
 | A2xx -> A3xx, STD  |          :x:           |      :x:     |
-| A4xx -> A5xx, LDD  |          :x:           |      :x:     |
+| A4xx -> A5xx, LDD  |          :x:           |   :warning:  |
 | A6xx -> A7xx, STD  |          :x:           |      :x:     |
-| A8xx -> A9xx, LDD  |          :x:           |      :x:     |
+| A8xx -> A9xx, LDD  |          :x:           |   :warning:  |
 | AAxx -> ABxx, STD  |          :x:           |      :x:     |
-| ACxx -> ADxx, LDD  |          :x:           |      :x:     |
+| ACxx -> ADxx, LDD  |          :x:           |   :warning:  |
 | AExx -> AFxx, STD  |          :x:           |      :x:     |
-| B0xx -> B7xx, IN   |        :warning:       |      :x:     |
+| B0xx -> B7xx, IN   |        :warning:       |   :warning:  |
 | B8xx -> BFxx, OUT  |        :warning:       |      :x:     |
 | C0xx -> CFxx, RJMP |          :x:           |      :x:     |
-| D0xx -> DFxx, RCALL|        :warning:       |      :x:     |
-| E0xx -> EFxx, LDI  |        :warning:       |      :x:     |
+| D0xx -> DFxx, RCALL|        :warning:       |   :warning:  |
+| E0xx -> EFxx, LDI  |        :warning:       |   :warning:  |
 | F0xx -> F3xx, BRCS |          :x:           |      :x:     |
 | F4xx -> F7xx, BRCC |          :x:           |      :x:     |
 | F8xx -> F9xx, BLD  |          :x:           |      :x:     |
