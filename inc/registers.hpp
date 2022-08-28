@@ -1,3 +1,12 @@
+//
+//  Registers.hpp
+//  AVRSim
+//
+//  Created by Alex ANASTASIU on 8/4/22.
+//
+
+// !!WIP!!
+
 #ifndef AVRSIM_REGISTERS
 #define AVRSIM_REGISTERS
 

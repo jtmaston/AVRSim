@@ -1,3 +1,11 @@
+//
+//  Decoder.cpp
+//  AVRSim
+//
+//  Created by Alex ANASTASIU on 8/4/22.
+//
+
+
 #include "decoder.hpp"
 #include <iostream>
 #include <sstream>
@@ -6,10 +14,10 @@ bool Decoder::decode(const Instruction instruction)
 {
     Executable e;
     
-    int16_t offset_1 = -1;
-    int16_t offset_2 = -1;
+    int16_t offset_1 = -1;              // offsets from the main
+    int16_t offset_2 = -1;              // gpio_registers pointer
     
-    switch (instruction.opcode)
+    switch (instruction.opcode)         // implement opcodes, following the ISA
     {
         case 0x00:
         {
@@ -99,6 +107,24 @@ bool Decoder::decode(const Instruction instruction)
             offset_2 = ((instruction.arg & 0x0f));
             break;
         }
+        
+        case 0x92:
+        {
+            offset_1 = (((instruction.arg & 0xf0) >> 4));
+            offset_2 = ((instruction.arg & 0x0f));
+            
+            switch(offset_2)
+            {
+                case 0xF:
+                {
+                    e.instruction_num = PUSH;
+                    offset_2 = -1;
+                    break;
+                }
+            }
+            
+            break;
+        }
             
         case 0x93:
         {
@@ -141,14 +167,14 @@ bool Decoder::decode(const Instruction instruction)
             {
                 if ( (instruction.arg & 0x0f) == 0x08 )
                 {
-                    e.instruction_num = ST;
+                    e.instruction_num = LD;
                     offset_2 = REG_Y;
                     offset_1 = (((instruction.arg & 0xf0) >> 4) + 16);
                     e.offset = 0;
                     
                 }else
                 {
-                    e.instruction_num = STD;
+                    e.instruction_num = LDD;
                     offset_2 = REG_Y;
                     offset_1 = (((instruction.arg & 0xf0) >> 4) + 16);
                     e.offset = instruction.arg & 0x0f - 8;
@@ -276,6 +302,7 @@ bool Decoder::decode(const Instruction instruction)
         case 0xEE:
         case 0xEF:
         {
+            e.instruction_num = LDI;
             offset_1 = (((instruction.arg & 0xf0) >> 4) + 16);
             offset_2 = -1;
             e.offset = ((instruction.opcode & 0x0f ) << 4 )| ( instruction.arg & 0x0f );
@@ -568,6 +595,23 @@ bool Decoder::decode(const Instruction instruction)
             
             break;
         }
+        case 0x90:
+        {
+            offset_1 = (((instruction.arg & 0xf0) >> 4));
+            offset_2 = ((instruction.arg & 0x0f));
+            
+            switch(offset_2)
+            {
+                case 0xF:
+                {
+                    e.instruction_num = POP;
+                    offset_2 = -1;
+                    break;
+                }
+            }
+            
+            break;
+        }
             
         case 0x91:
         {
@@ -588,12 +632,21 @@ bool Decoder::decode(const Instruction instruction)
             break;
         }
         
+        
         case 0x95:
         {
             e.instruction_num = RET;
             offset_1 = -1;
             offset_2 = -1;
             // FIXME: i am too lazy to implement all these worthless instructions. But I will have to do it one day.
+            break;
+        }
+            
+        case 0x2f:                      // FIXME: this is a quick shit done to work fast, not smart. This will be properly
+        {                               // implemented one day
+            e.instruction_num = MOV;
+            offset_1 = 24;
+            offset_2 = 24;
             break;
         }
             

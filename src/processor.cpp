@@ -1,4 +1,18 @@
+//
+//  Processor.cpp
+//  AVRSim
+//
+//  Created by Alex ANASTASIU on 8/4/22.
+//
+
+
+
+
+
 #include "processor.hpp"
+
+#include <iostream>
+
 
 uint16_t Processor::read_X()
 {
@@ -32,27 +46,110 @@ bool Processor::write_Z(uint16_t value)
     return true;
 }
 
-void Processor::execute(Executable e)
-{
+void Processor::execute(Executable e)   // takes an executable and runs it
+{                                       // see AVR ISA for implementation.
     switch ( e.instruction_num) {
+            
         case PUSH:
         {
             SRAM[SP--] = *e.operand_1;
             PC++;
             break;
         }
+        
+        case POP:
+        {
+            *e.operand_1 = SRAM[SP++];
+            PC++;
+            break;
+        }
+            
         case RCALL:
         {
             SP -= 2;
             PC = PC + e.offset + 1;
+            break;
         }
         case IN:
         {
-            *e.operand_1 = SRAM[e.offset];
+            *e.operand_1 = e.offset;
             PC++;
+            break;
+        }
+        case LDI:
+        {
+            *e.operand_1 = e.offset;
+            PC++;
+            break;
+        }
+        case STD:
+        {
+            switch ( uint8_t(e.operand_1 - gpio_registers) )
+            {
+                case REG_Y:
+                {
+                    switch( read_Y() )
+                    {
+                        case 0x3e3d:
+                        {
+                            SRAM[SP + e.offset] = *e.operand_2;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+            PC++;
+            break;
         }
             
-        default:
+        case LDD:
+        {
+            switch ( uint8_t(e.operand_2 - gpio_registers) )
+            {
+                case REG_Y:
+                {
+                    switch( read_Y() )
+                    {
+                        case 0x3e3d:
+                        {
+                            *e.operand_1 = SRAM[SP + e.offset];
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+            PC++;
             break;
+        }
+        case ADD:
+        {
+            
+            *e.operand_1 = *e.operand_1 + *e.operand_2;
+            PC++;
+            break;
+        }
+        
+        case RET:
+        {
+            SP += 2;
+            PC++;
+            break;
+        }
+            
+        case MOV:
+        {
+            *e.operand_1 = *e.operand_2;
+            PC++;
+            break;
+        }
+            
+        default:                // default case, to catch unimplemented instrs.
+        {
+            std::cerr << "Unrecognized instruction!";
+            throw std::runtime_error("FCK");
+            break;
+        }
     }
 }

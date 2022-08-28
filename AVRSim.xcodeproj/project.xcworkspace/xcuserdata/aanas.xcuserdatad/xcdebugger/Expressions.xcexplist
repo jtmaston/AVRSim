@@ -13,5 +13,28 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "Record::loadNextRecord(std::__1::basic_fstream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;):fetcher.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Processor::execute(Executable):processor.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "e.instruction_num">
+            </PersistentString>
+            <PersistentString
+               value = "uint8_t(e.operand_1 - gpio_registers)">
+            </PersistentString>
+            <PersistentString
+               value = "uint8_t(e.operand_2 - gpio_registers)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main:main.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Decoder::decodeRecord(Record):decoder.cpp">
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

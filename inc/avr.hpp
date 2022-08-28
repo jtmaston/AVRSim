@@ -1,3 +1,12 @@
+//
+//  avr.hpp
+//  AVRSim
+//
+//  Created by Alex ANASTASIU on 8/4/22.
+//  The AVR Instruction Set, AVR bradning are copyright (c) Microchip Technology Inc.
+//  This file is meant to be a human readable define to number, for the AVR interpreter.
+//  No claims of ownership are made to the instructions defined by the ISA.
+
 #pragma once
 
 enum ISA
