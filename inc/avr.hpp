@@ -82,37 +82,15 @@ enum ISA
     MOVW,
     LDI,
     LDS,
-    LD, // TODO: invesigate
-    /*LD
-    LD
-    LD
-    LD
-    LD
-    LDD
-    LD
-    LD*/
+    LD,
     ID,
     LDD,
     STS,
     ST,
-    /*ST
-    ST
-    ST
-    ST
-    ST
-    STD
-    ST
-    ST
-    ST*/
     STD,
     LPM,
-    // LPM
-    // LPM
     ELPM,
-    // ELPM
-    // ELPM
     SPM,
-    // SPM
     IN,
     OUT,
     PUSH,

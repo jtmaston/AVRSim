@@ -6,27 +6,44 @@
          contextName = "Decoder::decode(Instruction):decoder.cpp">
          <PersistentStrings>
             <PersistentString
+               value = "CPU-&gt;progmem.size()">
+            </PersistentString>
+            <PersistentString
                value = "offset_2">
             </PersistentString>
             <PersistentString
+               value = "instruction.opcode">
+            </PersistentString>
+            <PersistentString
                value = "offset_1">
+            </PersistentString>
+            <PersistentString
+               value = "instruction.arg">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "Record::loadNextRecord(std::__1::basic_fstream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;):fetcher.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "instruction_data.size()">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "Processor::execute(Executable):processor.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "e.instruction_num">
+               value = "uint8_t(e.operand_2 - gpio_registers)">
             </PersistentString>
             <PersistentString
                value = "uint8_t(e.operand_1 - gpio_registers)">
             </PersistentString>
             <PersistentString
-               value = "uint8_t(e.operand_2 - gpio_registers)">
+               value = "PC">
+            </PersistentString>
+            <PersistentString
+               value = "e.instruction_num">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

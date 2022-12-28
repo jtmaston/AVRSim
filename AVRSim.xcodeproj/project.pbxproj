@@ -26,7 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		15199EB2295C6081004FA68F /* Test */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Test; path = ../../Arduino/Test; sourceTree = "<group>"; };
+		154693DF295C85BA00C29D56 /* arduino.avr.mega */ = {isa = PBXFileReference; lastKnownFileType = folder; name = arduino.avr.mega; path = ../../Arduino/Emulator/T/build/arduino.avr.mega; sourceTree = "<group>"; };
 		1590B35F289ACF8D00C87D69 /* AVRSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVRSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		1590B382289AD1FF00C87D69 /* fetcher.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fetcher.hpp; sourceTree = "<group>"; };
 		1590B383289AD1FF00C87D69 /* avr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = avr.hpp; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		1590B356289ACF8D00C87D69 = {
 			isa = PBXGroup;
 			children = (
-				15199EB2295C6081004FA68F /* Test */,
+				154693DF295C85BA00C29D56 /* arduino.avr.mega */,
 				15B6E09C289D74E8007DEEBF /* doc */,
 				15B6E098289D7494007DEEBF /* readme.md */,
 				1590B38E289AD1FF00C87D69 /* CMakeLists.txt */,

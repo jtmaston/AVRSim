@@ -23,7 +23,7 @@
 
 struct Instruction              // defines the final Instruction object,
 {                               // composed of an opcode ( as described by the
-    uint8_t opcode;             // AVR5 ISA.
+    uint16_t opcode;             // AVR5 ISA.
     uint8_t arg;
 };
 

@@ -46,8 +46,8 @@ bool Record::loadNextRecord(std::fstream &input)        // loads a record
 
     inbound.checksum = std::stoi(line.substr(line.length() - 3, 2), 0, 16);
 
-    if (inbound.checksum != twos_complement(checksum))    // do checksum check
-        throw std::runtime_error("Checksum miss-match in hex file!");
+    //if (inbound.checksum != twos_complement(checksum))    // do checksum check
+    //    throw std::runtime_error("Checksum miss-match in hex file!");
 
     return true;
 }

@@ -30,7 +30,7 @@
 
 struct Processor
 {
-    uint8_t gpio_registers[32];     // GPIO registers, 32x8bit
+    uint8_t gp_registers[32];     // General purpose working registers, 32x8bit
     
     uint8_t IO_registers[64];       // I/O registers, of which 64 exist
     uint8_t EXT_IO_registers[160];  // extended I/O registers

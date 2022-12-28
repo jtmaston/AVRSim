@@ -58,16 +58,18 @@ int main()
         }
     }
     
-    uint16_t PROGMEM_SIZE = CPU.progmem.size();     // compute once, to aviod
+    uint16_t PROGMEM_SIZE = CPU.progmem.size();     // compute once, to avoid
                                                     // repeated calls in while
     
-    memset(CPU.gpio_registers, 0, 32 * sizeof(uint8_t));    // clear regs
+    memset(CPU.gp_registers, 0, 32 * sizeof(uint8_t));    // clear regs
     memset(CPU.SRAM, 0, 2048 * sizeof(uint8_t));            // clear SRAM
 
     auto t2 = high_resolution_clock::now();
     auto ms_int = duration_cast<microseconds>(t2 - t1);
     std::cout << "Finished loading and initialization in "
         << ms_int.count() << "us\n";
+    std::cout << "Instruction count: ";
+    std::cout << PROGMEM_SIZE << std::endl;
     
     t1 = high_resolution_clock::now();
     while( CPU.PC < PROGMEM_SIZE )                  // the execute cycle
@@ -79,7 +81,7 @@ int main()
     
     
     std::cout << "Program returned " <<
-        (CPU.gpio_registers[25] << 8 | CPU.gpio_registers[24]) << '\n';
+        (CPU.gp_registers[25] << 8 | CPU.gp_registers[24]) << '\n';
     
     std::cout << "Finished executing in " << ms_int.count() << "us\n";
     

@@ -22,127 +22,127 @@ This brings me on a tangent: I am aware that even instructions with the same nam
 Note 2: If it seems that opcodes are implemented at random, that's because they truly are. In the first phase, trying to see if the project is fesable, I took a random program which adds two numbers, a and b, compiled to .hex and started by implementing only the instructions available in it.
 
 
-|   OPCODE     |        DECODABLE       |  EXECUTABLE  |
-|:------------ |:----------------------:|:------------:|
-| 00xx, NOP    |        :warning:       |      :warning:     |
-| 01xx, MOVW   |        :warning:       |      :warning:     |
-| 02xx, MULS   |        :warning:       |      :x:     |
-| 03xx, MULSU  |        :warning:       |      :x:     |
-| 03xx, FMUL   |        :warning:       |      :x:     |
-| 03xx, FMULS  |        :warning:       |      :x:     |
-| 03xx, FMULSU |        :warning:       |      :x:     |
-| 04xx, CPC    |        :warning:       |      :x:     |
-| 05xx, CPC    |        :warning:       |      :x:     |
-| 06xx, CPC    |        :warning:       |      :x:     |
-| 07xx, CPC    |        :warning:       |      :x:     |
-| 08xx, SBC    |        :warning:       |      :x:     |
-| 09xx, SBC    |     :construction:     |      :x:     |
-| 0Axx, SBC    |          :x:           |      :x:     |
-| 0Bxx, SBC    |          :x:           |      :x:     |
-| 0Cxx, ADD    |        :warning:       |   :warning:  |
-| 0Dxx, ADD    |        :warning:       |   :warning:  |
-| 0Exx, ADD    |        :warning:       |   :warning:  |
-| 0Fxx, ADD    |        :warning:       |   :warning:  |
-| 10xx, CPSE   |          :x:           |      :x:     |
-| 11xx, CPSE   |          :x:           |      :x:     |
-| 12xx, CPSE   |          :x:           |      :x:     |
-| 13xx, CPSE   |          :x:           |      :x:     |
-| 14xx, CP     |          :x:           |      :x:     |
-| 15xx, CP     |          :x:           |      :x:     |
-| 16xx, CP     |          :x:           |      :x:     |
-| 17xx, CP     |          :x:           |      :x:     |
-| 18xx, SUB    |          :x:           |      :x:     |
-| 19xx, SUB    |          :x:           |      :x:     |
-| 1Axx, SUB    |          :x:           |      :x:     |
-| 1Bxx, SUB    |          :x:           |      :x:     |
-| 1Cxx, ADC    |        :warning:       |      :x:     |
-| 1Dxx, ADC    |        :warning:       |      :x:     |
-| 1Exx, ADC    |        :warning:       |      :x:     |
-| 1Fxx, ADC    |        :warning:       |      :x:     |
-| 20xx, AND    |          :x:           |      :x:     |
-| 21xx, AND    |          :x:           |      :x:     |
-| 22xx, AND    |          :x:           |      :x:     |
-| 23xx, AND    |          :x:           |      :x:     |
-| 24xx, EOR    |          :x:           |      :x:     |
-| 25xx, EOR    |          :x:           |      :x:     |
-| 26xx, EOR    |          :x:           |      :x:     |
-| 27xx, EOR    |          :x:           |      :x:     |
-| 28xx, OR     |          :x:           |      :x:     |
-| 29xx, OR     |          :x:           |      :x:     |
-| 2Axx, OR     |          :x:           |      :x:     |
-| 2Bxx, OR     |          :x:           |      :x:     |
-| 2Cxx, MOV    |          :x:           |   :warning:  |
-| 2Dxx, MOV    |          :x:           |   :warning:  |
-| 2Exx, MOV    |          :x:           |   :warning:  |
-| 2Fxx, MOV            |          :x:           |   :warning:  |
-| 30xx -> 3Fxx, CPI    |          :x:           |      :x:     |
-| 40xx -> 4Fxx, SBCI   |          :x:           |      :x:     |
-| 50xx -> 5Fxx, SBCI   |          :x:           |      :x:     |
-| 60xx -> 6Fxx, ORI    |          :x:           |      :x:     |
-| 70xx -> 7Fxx, ANDI   |          :x:           |      :x:     |
-| 80xx, LD    |          :x:           |      :x:     |
-| 80xx, LDD   |          :x:           |   :warning:  |
-| 81xx, LD    |        :warning:       |      :x:     |
-| 81xx, LDD   |        :warning:       |   :warning:  |
-| 82xx, ST    |          :x:           |      :x:     |
-| 82xx, STD   |          :x:           |   :warning:  |
-| 83xx, ST    |          :x:           |      :x:     |
-| 83xx, STD   |          :x:           |   :warning:  |
-| 84xx, LDD   |          :x:           |   :warning:  |
-| 85xx, LDD   |          :x:           |   :warning:  |
-| 86xx, STD   |          :x:           |   :warning:  |
-| 87xx, STD   |          :x:           |   :warning:  |
-| 88xx, LDD   |          :x:           |   :warning:  |
-| 89xx, LDD   |          :x:           |   :warning:  |
-| 8Axx, STD   |          :x:           |   :warning:  |
-| 8Bxx, STD   |          :x:           |   :warning:  |
-| 8Cxx, LDD   |          :x:           |   :warning:  |
-| 8Dxx, LDD   |          :x:           |   :warning:  |
-| 8Exx, STD   |          :x:           |   :warning:  |
-| 8Fxx, STD   |          :x:           |   :warning:  |
-| 90xx, LDS   |          :x:           |      :x:     |         
-| 90xx, LD    |          :x:           |      :x:     |
-| 90xx, POP   |          :x:           |      :warning:     |
-| 90xx, LDS   |          :x:           |      :x:     |
-| 90xx, LD    |          :x:           |      :x:     |
-| 90xx, POP   |          :x:           |      :warning:     |
-| 91xx, LDS   |          :x:           |      :x:     |
-| 91xx, LD    |          :x:           |      :x:     |
-| 91xx, POP   |        :warning:       |   :warning:  |
-| 92xx, STS   |          :x:           |      :x:     |
-| 92xx, ST    |          :x:           |      :x:     |
-| 92xx, PUSH  |        :warning:       |   :warning:  |
-| 93xx, STS   |          :x:           |      :x:     |
-| 93xx, ST    |          :x:           |      :x:     |
-| 93xx, PUSH  |          :x:           |   :warning:  |
-| 94xx, MANY  |          :x:           |      :x:     |
-| 95xx, MANY  |     :construction:     |      :x:     |
-| 96xx, ADIW  |        :warning:       |      :x:     |
-| 97xx, SBIW  |          :x:           |      :x:     |
-| 98xx, CBI   |          :x:           |      :x:     |
-| 99xx, SBIC  |          :x:           |      :x:     |
-| 9Axx, SBI   |          :x:           |      :x:     |
-| 9Bxx, SBIS  |          :x:           |      :x:     |
-| 9Cxx -> 9Fxx, MUL  |          :x:           |      :x:     |
-| A0xx -> A1xx, LDD  |          :x:           |   :warning:  |
-| A2xx -> A3xx, STD  |          :x:           |      :x:     |
-| A4xx -> A5xx, LDD  |          :x:           |   :warning:  |
-| A6xx -> A7xx, STD  |          :x:           |      :x:     |
-| A8xx -> A9xx, LDD  |          :x:           |   :warning:  |
-| AAxx -> ABxx, STD  |          :x:           |      :x:     |
-| ACxx -> ADxx, LDD  |          :x:           |   :warning:  |
-| AExx -> AFxx, STD  |          :x:           |      :x:     |
-| B0xx -> B7xx, IN   |        :warning:       |   :warning:  |
-| B8xx -> BFxx, OUT  |        :warning:       |      :x:     |
-| C0xx -> CFxx, RJMP |          :x:           |      :x:     |
-| D0xx -> DFxx, RCALL|        :warning:       |   :warning:  |
-| E0xx -> EFxx, LDI  |        :warning:       |   :warning:  |
-| F0xx -> F3xx, BRCS |          :x:           |      :x:     |
-| F4xx -> F7xx, BRCC |          :x:           |      :x:     |
-| F8xx -> F9xx, BLD  |          :x:           |      :x:     |
-| FAxx -> FBxx, BST  |          :x:           |      :x:     |
-| FCxx -> FDxx, SBRC |          :x:           |      :x:     |
-| FExx -> FFxx, SBRS |          :x:           |      :x:     |
+|         OPCODE        |          DECODABLE        |     EXECUTABLE     |
+|:---------------------:|:-------------------------:|:------------------:|
+| 00xx, NOP             |         :warning:         |      :warning:     |
+| 01xx, MOVW            |         :warning:         |      :warning:     |
+| 02xx, MULS            |         :warning:         |      :warning:     |
+| 03xx, MULSU           |         :warning:         |      :warning:     |
+| 03xx, FMUL            |         :warning:         |      :warning:     |
+| 03xx, FMULS           |         :warning:         |         :x:        |
+| 03xx, FMULSU          |         :warning:         |         :x:        |
+| 04xx, CPC             |         :warning:         |         :x:        |
+| 05xx, CPC             |         :warning:         |         :x:        |
+| 06xx, CPC             |         :warning:         |         :x:        |
+| 07xx, CPC             |         :warning:         |         :x:        |
+| 08xx, SBC             |         :warning:         |         :x:        |
+| 09xx, SBC             |         :warning:         |         :x:        |
+| 0Axx, SBC             |         :warning:         |         :x:        |
+| 0Bxx, SBC             |         :warning:         |         :x:        |
+| 0Cxx, ADD             |         :warning:         |      :warning:     |
+| 0Dxx, ADD             |         :warning:         |      :warning:     |
+| 0Exx, ADD             |         :warning:         |      :warning:     |
+| 0Fxx, ADD             |         :warning:         |      :warning:     |
+| 10xx, CPSE            |         :warning:         |         :x:        |
+| 11xx, CPSE            |         :warning:         |         :x:        |
+| 12xx, CPSE            |         :warning:         |         :x:        |
+| 13xx, CPSE            |         :warning:         |         :x:        |
+| 14xx, CP              |         :warning:         |         :x:        |
+| 15xx, CP              |         :warning:         |         :x:        |
+| 16xx, CP              |         :warning:         |         :x:        |
+| 17xx, CP              |         :warning:         |         :x:        |
+| 18xx, SUB             |         :warning:         |         :x:        |
+| 19xx, SUB             |         :warning:         |         :x:        |
+| 1Axx, SUB             |         :warning:         |         :x:        |
+| 1Bxx, SUB             |         :warning:         |         :x:        |
+| 1Cxx, ADC             |         :warning:         |         :x:        |
+| 1Dxx, ADC             |         :warning:         |         :x:        |
+| 1Exx, ADC             |         :warning:         |         :x:        |
+| 1Fxx, ADC             |         :warning:         |         :x:        |
+| 20xx, AND             |         :warning:         |         :x:        |
+| 21xx, AND             |         :warning:         |         :x:        |
+| 22xx, AND             |         :warning:         |         :x:        |
+| 23xx, AND             |         :warning:         |         :x:        |
+| 24xx, EOR             |         :warning:         |         :x:        |
+| 25xx, EOR             |         :warning:         |         :x:        |
+| 26xx, EOR             |         :warning:         |         :x:        |
+| 27xx, EOR             |         :warning:         |         :x:        |
+| 28xx, OR              |         :warning:         |         :x:        |
+| 29xx, OR              |         :warning:         |         :x:        |
+| 2Axx, OR              |         :warning:         |         :x:        |
+| 2Bxx, OR              |         :warning:         |         :x:        |
+| 2Cxx, MOV             |         :warning:         |      :warning:     |
+| 2Dxx, MOV             |         :warning:         |      :warning:     |
+| 2Exx, MOV             |         :warning:         |      :warning:     |
+| 2Fxx, MOV             |         :warning:         |      :warning:     |
+| 30xx -> 3Fxx, CPI     |         :warning:         |         :x:        |
+| 40xx -> 4Fxx, SBCI    |         :warning:         |         :x:        |
+| 50xx -> 5Fxx, SUBI    |         :warning:         |         :x:        |
+| 60xx -> 6Fxx, ORI     |         :warning:         |         :x:        |
+| 70xx -> 7Fxx, ANDI    |         :warning:         |         :x:        |
+| 80xx, LD              |         :warning:         |         :x:        |
+| 80xx, LDD             |         :warning:         |      :warning:     |
+| 81xx, LD              |         :warning:         |         :x:        |
+| 81xx, LDD             |         :warning:         |      :warning:     |
+| 82xx, ST              |         :warning:         |         :x:        |
+| 82xx, STD             |         :warning:         |      :warning:     |
+| 83xx, ST              |         :warning:         |         :x:        |
+| 83xx, STD             |         :warning:         |      :warning:     |
+| 84xx, LDD             |         :warning:         |      :warning:     |
+| 85xx, LDD             |         :warning:         |     :warning:     |
+| 86xx, STD             |         :warning:         |      :warning:     |
+| 87xx, STD             |         :warning:         |      :warning:     |
+| 88xx, LDD             |         :warning:         |      :warning:     |
+| 89xx, LDD             |         :warning:         |      :warning:     |
+| 8Axx, STD             |         :warning:         |      :warning:     |
+| 8Bxx, STD             |         :warning:         |      :warning:     |
+| 8Cxx, LDD             |         :warning:         |      :warning:     |
+| 8Dxx, LDD             |         :warning:         |      :warning:     |
+| 8Exx, STD             |         :warning:         |      :warning:     |
+| 8Fxx, STD             |         :warning:         |      :warning:     |
+| 90xx, LDS             |            :x:            |         :x:        |        
+| 90xx, LD              |            :x:            |         :x:        |
+| 90xx, POP             |         :warning:         |      :warning:     |
+| 90xx, LDS             |            :x:            |         :x:        |
+| 90xx, LD              |            :x:            |         :x:        |
+| 90xx, POP             |         :warning:         |      :warning:     |
+| 91xx, LDS             |            :x:            |         :x:        |
+| 91xx, LD              |            :x:            |         :x:        |
+| 91xx, POP             |         :warning:         |      :warning:     |
+| 92xx, STS             |            :x:            |         :x:        |
+| 92xx, ST              |            :x:            |         :x:        |
+| 92xx, PUSH            |         :warning:         |      :warning:     |
+| 93xx, STS             |            :x:            |         :x:        |
+| 93xx, ST              |            :x:            |         :x:        |
+| 93xx, PUSH            |         :warning:         |      :warning:     |
+| 94xx, MANY            |            :x:            |         :x:        |
+| 95xx, MANY            |       :construction:      |         :x:        |
+| 96xx, ADIW            |         :warning:         |         :x:        |
+| 97xx, SBIW            |         :warning:         |         :x:        |
+| 98xx, CBI             |            :x:            |         :x:        |
+| 99xx, SBIC            |            :x:            |         :x:        |
+| 9Axx, SBI             |            :x:            |         :x:        |
+| 9Bxx, SBIS            |            :x:            |         :x:        |
+| 9Cxx -> 9Fxx, MUL     |         :warning:         |         :x:        |
+| A0xx -> A1xx, LDD     |         :warning:         |      :warning:     |
+| A2xx -> A3xx, STD     |         :warning:         |         :x:        |
+| A4xx -> A5xx, LDD     |         :warning:         |      :warning:     |
+| A6xx -> A7xx, STD     |         :warning:         |         :x:        |
+| A8xx -> A9xx, LDD     |         :warning:         |      :warning:     |
+| AAxx -> ABxx, STD     |         :warning:         |         :x:        |
+| ACxx -> ADxx, LDD     |         :warning:         |      :warning:     |
+| AExx -> AFxx, STD     |         :warning:         |         :x:        |
+| B0xx -> B7xx, IN      |         :warning:         |      :warning:     |
+| B8xx -> BFxx, OUT     |         :warning:         |         :x:        |
+| C0xx -> CFxx, RJMP    |         :warning:         |         :x:        |
+| D0xx -> DFxx, RCALL   |         :warning:         |      :warning:     |
+| E0xx -> EFxx, LDI     |         :warning:         |      :warning:     |
+| F0xx -> F3xx, BRCS    |         :warning:         |         :x:        |
+| F4xx -> F7xx, BRCC    |         :warning:         |         :x:        |
+| F8xx -> F9xx, BLD     |         :warning:         |         :x:        |
+| FAxx -> FBxx, BST     |         :warning:         |         :x:        |
+| FCxx -> FDxx, SBRC    |         :warning:         |         :x:        |
+| FExx -> FFxx, SBRS    |         :warning:         |         :x:        |
 
 
 hecc.
