@@ -24,8 +24,8 @@ Note 2: If it seems that opcodes are implemented at random, that's because they 
 
 |   OPCODE     |        DECODABLE       |  EXECUTABLE  |
 |:------------ |:----------------------:|:------------:|
-| 00xx, NOP    |        :warning:       |      :x:     |
-| 01xx, MOVW   |        :warning:       |      :x:     |
+| 00xx, NOP    |        :warning:       |      :warning:     |
+| 01xx, MOVW   |        :warning:       |      :warning:     |
 | 02xx, MULS   |        :warning:       |      :x:     |
 | 03xx, MULSU  |        :warning:       |      :x:     |
 | 03xx, FMUL   |        :warning:       |      :x:     |

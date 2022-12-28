@@ -144,6 +144,23 @@ void Processor::execute(Executable e)   // takes an executable and runs it
             PC++;
             break;
         }
+        case NOP:
+        {
+            PC++;
+            break;
+        }
+        case MOVW:
+        {
+            *e.operand_1 = *e.operand_2;
+            *e.operand_2 = *e.operand_2;
+            PC++;
+            break;
+        }
+        case MULS:
+        {
+            
+        }
+        
             
         default:                // default case, to catch unimplemented instrs.
         {

@@ -21,7 +21,7 @@ bool Decoder::decode(const Instruction instruction)
     {
         case 0x00:
         {
-            e.instruction_num = MOVW;
+            e.instruction_num = NOP;
             offset_1 = -1;
             offset_2 = -1;
             break;

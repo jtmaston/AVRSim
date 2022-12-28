@@ -19,6 +19,16 @@
 #include <chrono>
 #include <cstring>
 
+#include <util.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
+#include <sys/stat.h>
+
+#include <chrono>
+using namespace std::chrono;
+
 int main()
 {
     
@@ -74,4 +84,60 @@ int main()
     std::cout << "Finished executing in " << ms_int.count() << "us\n";
     
     return 0;
+    
+    //int master;
+    //int slave;
+    //char slave_name[100];
+    
+    /*openpty(&master, &slave, slave_name, NULL, NULL);
+    std::cout << "Serial redirects to " << slave_name << std::endl;
+    int fd;
+    if ((fd = open(slave_name, O_RDWR|O_NDELAY|O_NOCTTY)) < 0)
+            return -1;
+    
+    int flags;
+    flags = fcntl(fd, F_GETFL, 0);
+    tcflush(fd, TCOFLUSH);
+    tcflush(fd, TCIFLUSH);
+
+    while(true){
+        char buf[1000] = { 0 };
+        struct stat filestats;
+        fstat(fd, &filestats);
+        if ( filestats.st_size > 0 )
+            std::cout << "Filesize is " << filestats.st_size << std::endl;
+        
+        
+        if ( !(read(fd, buf, 1000) < 0 ) )
+        {
+            std :: cout << "Incoming: " << buf << std::endl;
+        }
+    };*/
+    
+    /*openpty(&master, &slave, slave_name, NULL, NULL);
+    std::cout << "Slave serial redirects to " << slave_name << std::endl;
+    
+    
+    // TODO: check if valid for different baudrates
+    const int baudrate = 9600;
+    float baudate_time = (float) (1e6) / (baudrate / 8.0f );
+    
+    auto start = high_resolution_clock::now();
+    while (true) {
+        char buf[3] = { 0 };
+        if( read(master, buf, 1) > 0 )
+        {
+            //std::cout << "Incoming: " << buf << '\n';
+        }
+        auto stop = high_resolution_clock::now();
+        if( duration_cast<microseconds>(stop - start).count() < baudate_time )
+        {
+            usleep(baudate_time - duration_cast<microseconds>(stop - start).count());
+        }
+            
+        start = high_resolution_clock::now();
+    }
+    close(master);
+    close(slave);*/
+    //return 0;
 }
